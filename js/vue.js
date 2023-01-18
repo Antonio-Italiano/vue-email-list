@@ -8,7 +8,17 @@ const app = Vue.createApp({
     },
 
     methods: {
+        // CREATE RANDOM EMAIL USING API
+        getRandomEmail(){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then (response => {
+                this.mails.push(response.data.response);
+            })            
+        }
     },
+    mounted() {
+        this.getRandomEmail()
+    }
 });
 
 app.mount('#root');
