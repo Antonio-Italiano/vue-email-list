@@ -17,7 +17,10 @@ const app = Vue.createApp({
         }
     },
     mounted() {
-        this.getRandomEmail()
+        // I CREATE A LOOP TO RUN
+        for(let i = 0; i < 10; i++) {
+            this.getRandomEmail()
+        }
     }
 });
 
